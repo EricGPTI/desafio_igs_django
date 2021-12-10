@@ -9,6 +9,8 @@ python-decouple = "*"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 flake8 = "*"

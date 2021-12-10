@@ -7,6 +7,6 @@ def test_endpoint_employees_status_code_200():
     assert resp.status_code == 200
 
 
-def test_employee_id_1():
-    resp = get(url + "employees/")
-    assert resp.status_code == 200
+# def test_employee_id_1():
+#     resp = get(url + "employees/")
+#     assert resp.status_code == 200

@@ -53,8 +53,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov=api
-<<<<<<< HEAD
         pytest --cov=core
-=======
-        pytest --cov=core
->>>>>>> 75a7143bf0446da76d30bcbddb4678bcfa3809ec

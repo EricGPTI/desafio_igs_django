@@ -54,3 +54,4 @@ jobs:
       run: |
         pytest --cov=api
         pytest --cov=core
+    - name: Afte

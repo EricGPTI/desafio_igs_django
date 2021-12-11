@@ -19,7 +19,7 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10]
+        python-version: [3.7.1, 3.8.1, 3.9., 3.10.0]
     
     services: 
       postgres:
@@ -53,4 +53,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest --cov=api
+<<<<<<< HEAD
         pytest --cov=core
+=======
+        pytest --cov=core
+>>>>>>> 75a7143bf0446da76d30bcbddb4678bcfa3809ec

@@ -1,0 +1,19 @@
+[flake8]
+exclude = 
+    .git, 
+    __pycache__, 
+    docs/source/conf.py, 
+    old, 
+    build, 
+    dist, 
+    .vscode, 
+    .pytest_cache, 
+    migrations,
+    .venv,
+    .env,
+    test*
+
+max-complexity = 10
+max-line-length = 120
+# Deve ser removido depois
+ignore = F401

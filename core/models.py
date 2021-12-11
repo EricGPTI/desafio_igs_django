@@ -63,6 +63,7 @@ class UserManager(BaseUserManager):
             )
         return self.none()
 
+
 class User(AbstractBaseUser, PermissionsMixin):
     """
     App API User Class
@@ -110,7 +111,3 @@ class User(AbstractBaseUser, PermissionsMixin):
     def get_short_name(self):
         """Return the short name for the user."""
         return self.first_name
-
-    def email_user(self, subject, message, from_email=None, **kwargs):
-        """Send an email to this user."""
-        send_mail(subject, message, from_email, [self.email], **kwargs)

@@ -9,6 +9,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UserManager(BaseUserManager):
+    
     use_in_migrations = True
 
     def _create_user(self, email, password, **extra_fields):
@@ -130,7 +131,7 @@ class Department(models.Model):
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
-    email = models.EmailField()
+    email = models.EmailField(max_length=60)
     department_id = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     class Meta:

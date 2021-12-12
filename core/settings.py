@@ -19,7 +19,7 @@ DEBUG = config("DEBUG", cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
-AUTH_USER_MODEL = 'core.User'
+AUTH_USER_MODEL = 'api.User'
 
 # Application definition
 

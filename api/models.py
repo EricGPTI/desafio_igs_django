@@ -129,8 +129,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Department(models.Model):
     department = models.CharField(max_length=30)
 
-    def __unicode__(self):
-        return '%s' % (self.department)
+    def __str__(self):
+        return f"Departamento {self.department}"
+
 
 
 class Employee(models.Model):
@@ -148,4 +149,4 @@ class Employee(models.Model):
         ]
 
     def __str__(self):
-        return self.id, self.name, self.email, self.department
+        return f"Id {self.id}, Nome {self.name}, E-Mail {self.email}, Departamento {self.department}"

@@ -17,7 +17,7 @@ from django.utils.translation import gettext, gettext_lazy as _
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.debug import sensitive_post_parameters
 
-from api.models import User
+from api.models import User, Department, Employee
 
 csrf_protect_m = method_decorator(csrf_protect)
 sensitive_post_parameters_m = method_decorator(sensitive_post_parameters())
@@ -188,3 +188,24 @@ class UserAdmin(admin.ModelAdmin):
             request.POST = request.POST.copy()
             request.POST['_continue'] = 1
         return super().response_add(request, obj, post_url_continue)
+
+
+@admin.register(Department)
+class DepartmentAdmin(admin.ModelAdmin):
+    list_display = ['id', 'department']
+    list_filter = ['department']
+    search_fields = ['department']
+    ordering = ['department']
+
+    def __str__(self):
+        return f"Departamento {self.Departament}"
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'email', 'department']
+    list_filter = ['department']
+    search_fields = ['name', 'email', 'department']
+
+    def __str__(self):
+        return f"Nome {self.name}, E-Mail {self.email}, Departamento {self.department}"

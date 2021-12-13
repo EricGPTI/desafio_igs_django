@@ -130,7 +130,7 @@ dmypy.json
 
 # IDEs
 *Ideas
-*.vscode
+.vscode*
 
 # Databases
 data*

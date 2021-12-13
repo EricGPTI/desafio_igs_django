@@ -1,3 +1,4 @@
+from typing import Generic
 from django.db import models
 from django.contrib import auth
 from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
@@ -128,11 +129,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Department(models.Model):
     department = models.CharField(max_length=30)
 
+    def __unicode__(self):
+        return '%s' % (self.department)
+
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=60)
-    department_id = models.ForeignKey(Department, on_delete=models.CASCADE)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = _('employee')
@@ -144,4 +148,4 @@ class Employee(models.Model):
         ]
 
     def __str__(self):
-        return self.name, self.email, self.department_id
+        return self.id, self.name, self.email, self.department

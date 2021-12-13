@@ -1,19 +1,19 @@
-from rest_framework import serializers
+from django.db.models.fields import SlugField
+from rest_framework import fields, serializers
 from api.models import User, Employee, Department
-
-
-class EmployeeSerializer(serializers.ModelSerializer):
-    department = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
-
-    name = serializers.CharField(max_length=100)
-    email  = serializers.EmailField(max_length=60)
-
-    class Meta:
-        model = Employee
-        fields = ('name', 'email', 'department')
-
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Department
-        fields = ('department', 'employees')
+        fields = ('id', 'department')
+
+class EmployeeSerializer(serializers.ModelSerializer):
+    # department = serializers.SlugRelatedField(
+    #     many=False, 
+    #     read_only=True, 
+    #     slug_field='department'
+    #     )
+    
+    class Meta:
+        model = Employee
+        fields = ('id', 'name', 'email', 'department')

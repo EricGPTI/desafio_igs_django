@@ -2,7 +2,7 @@ import requests
 import json
 
 url = "http://127.0.0.1:8000/api/v1/"
-headers = {'Content-Type': 'application/json', 'Authorization': 'Token 0ca664c21372f82b2700e05edffc5f728c73059e'}
+headers = {'Content-Type': 'application/json', 'Authorization': 'Token 5f04f3ed15bc62419520c149ca1543620d88ce64'}
 endpoint = "employees/"
 
 

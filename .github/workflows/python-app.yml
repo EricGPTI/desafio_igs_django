@@ -27,9 +27,9 @@ jobs:
         env: 
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports: ["5432:5432"]
-
+          POSTGRES_DB: db_employee
+        ports: 
+        - 5432:5432
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.10.0
@@ -44,15 +44,11 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -r requirements-dev.txt
+        pip install --no-cache-dir -r requirements.txt
+        pip install --no-cache-dir -r requirements-dev.txt
     - name: Copying env var configuration
       run: |
         sudo cp contrib/env-sample .env
     - name: Validate PEP8
       run: |
         flake8
-    # - name: Test with pytest
-    #   run: |
-    #     pytest --cov=api
-    #     pytest --cov=core

@@ -16,4 +16,4 @@ exclude =
 max-complexity = 10
 max-line-length = 120
 # Deve ser removido depois
-ignore = F401
+ignore = F401, F811

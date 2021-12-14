@@ -129,4 +129,9 @@ dmypy.json
 .pyre/
 
 # IDEs
-IDEAS
+*Ideas
+.vscode
+.vscode/*
+
+# Databases
+data*

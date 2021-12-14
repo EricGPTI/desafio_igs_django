@@ -28,8 +28,8 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: db_employee
-        ports: "5432:5432"
-
+        ports: 
+        - 5432:5432
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.10.0
@@ -52,7 +52,3 @@ jobs:
     - name: Validate PEP8
       run: |
         flake8
-    - name: Test with pytest
-      run: |
-        pytest --cov=api
-        pytest --cov=core
